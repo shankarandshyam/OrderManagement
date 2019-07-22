@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Order_Management.Models
+{
+    public class Order
+    {
+        public int orderID { get; set; }
+        public string buyerName { get; set; }
+        public string buyerPhone { get; set; }
+        public string buyerEmail { get; set; }
+        public string shippingAddress { get; set; }
+        public int orderStatus { get; set; }
+        public int? orderItem { get; set; }
+        public int? quantity { get; set; }
+    }
+
+    public class OrderItem
+    {
+        public int orderItemID { get; set; }
+        public string orderName { get; set; }
+        public string orderWeight { get; set; }
+        public string orderHeight { get; set; }
+        public string orderHeight { get; set; }
+        public string orderImage { get; set; }
+        public string orderAvailableQuantity { get; set; }
+        public string orderBarCode { get; set; }
+        public string orderStockUnits { get; set; }
+    }
+}
