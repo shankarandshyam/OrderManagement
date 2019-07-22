@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="OrderManagement" Class="OrdersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KUMAR\SQLEXPRESS;Initial Catalog=OrderManagement;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OrderManagementConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spDelete_Order" Method="spDelete_Order">
+    <Parameter Name="intOrderID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDisplay_AllOrders" Method="spDisplay_AllOrders">
+    <ElementType Name="spDisplay_AllOrdersResult">
+      <Column Name="intOrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vcBuyerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vcBuyerPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vcBuyerEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vcShippingAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="intOrderStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intOrderItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spDisplay_Order" Method="spDisplay_Order">
+    <Parameter Name="intOrderID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spDisplay_OrderResult">
+      <Column Name="intOrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vcBuyerName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vcBuyerPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vcBuyerEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vcShippingAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="intOrderStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intOrderItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpsert_Order" Method="spUpsert_Order">
+    <Parameter Name="vcBuyerName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="vcBuyerPhone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="vcBuyerEmail" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="vcShippingAddress" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="intOrderStatus" Type="System.Int32" DbType="Int" />
+    <Parameter Name="intOrderItem" Type="System.Int32" DbType="Int" />
+    <Parameter Name="intQuantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="existOrderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="intOrderID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spUpsert_OrderResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpsert_OrderItem" Method="spUpsert_OrderItem">
+    <Parameter Name="vcItemName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="intWeight" Type="System.Int32" DbType="Int" />
+    <Parameter Name="intHeight" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vcImage" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="intStockItems" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vcBarCode" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="intAvailableQuantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="existOrderItemID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="intOrderItemID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="spUpsert_OrderItemResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
